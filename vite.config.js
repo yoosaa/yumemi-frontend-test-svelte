@@ -1,3 +1,5 @@
+import path from 'path'
+
 import { defineConfig } from 'vite'
 import { svelte } from '@sveltejs/vite-plugin-svelte'
 
@@ -7,7 +9,11 @@ import sveltePreProcess from 'svelte-preprocess'
 export default defineConfig({
   plugins: [
     svelte({
-      preprocess: sveltePreProcess()
+      preprocess: sveltePreProcess({
+        scss: {
+          prependData: `@import 'src/lib/scss/_mixin.scss';`
+        }
+      })
     })
   ]
 })

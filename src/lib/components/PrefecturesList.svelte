@@ -163,6 +163,7 @@
     width: 200px;
     position: sticky;
     left: 0;
+    padding-bottom: 20px;
     top: 72px;
     bottom: auto;
     border-top: none;

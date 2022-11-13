@@ -92,6 +92,7 @@
 @include mq(pc) {
   .graphs {
     flex: 6;
+    padding-left: 200px;
     padding-bottom: 60px;
     .graphWrap {
       width: 80%;

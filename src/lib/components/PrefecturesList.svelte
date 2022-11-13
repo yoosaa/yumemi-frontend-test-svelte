@@ -11,7 +11,7 @@
   let windowWidth = null
   $: {
     if (windowWidth > 768) {
-      $listHeight = 90
+      $listHeight = 100
       visibleFlg = true
     } else {
       $listHeight = 0
@@ -161,14 +161,18 @@
 @include mq(pc) {
   .prefecturelist{
     width: 200px;
-    position: sticky;
+    position: fixed;
     left: 0;
-    padding-bottom: 20px;
-    top: 72px;
+    top: 0;
     bottom: auto;
     border-top: none;
+    border-right: 1px solid rgba(0, 0, 0, .4);
     .toggleButton {
       display: none;
+    }
+    .listsWrap {
+      padding-top: 72px;
+      padding-bottom: 20px;
     }
   }
 }

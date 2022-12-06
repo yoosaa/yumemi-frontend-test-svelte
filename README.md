@@ -1,38 +1,9 @@
-# create-svelte
+# Overview
+[株式会社ゆめみ](https://www.yumemi.co.jp)様にて執り行われているフロントエンドコーディング試験のSvelte版です（概要：[https://notion.yumemi.co.jp/0e9ef27b55704d7882aab55cc86c999d](https://notion.yumemi.co.jp/0e9ef27b55704d7882aab55cc86c999d)）。<br> 
+実際に受検してのものではなく、個人で趣味的に作成したものですので、勘違いのなきようお願い致します。<br>
+使用するFWに、React、Vueのいずれかという指定がありますが、最近書き始めたSvelteで書いています。<br>
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
-
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+# Use
+- SvelteKit
+- Scss
+- [Apache ECharts](https://echarts.apache.org/en/index.html)

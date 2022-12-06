@@ -1,11 +1,12 @@
 <script>
   import { onMount } from 'svelte'
-  import * as echarts from 'echarts'
+  import { handleEcharts } from '../js/funcs.js'
 
   export let demographics = {}
 
   let renderAreas = []
-  let chart = []
+  let charts = []
+  let handleEchart = new handleEcharts()
   onMount(() => {
     demographics.data.forEach((demographic, index) => {
       let xAxisLabels = []
@@ -14,65 +15,25 @@
         xAxisLabels.push(d.year)
         dataValues.push(d.value)
       })
-      chart[index] = echarts.init(renderAreas[index])
-      chart[index].setOption({
-        title: {
-          text: demographic.label
-        },
-        tooltip: {
-          trigger: 'axis',
-          axisPointer: {
-            type: 'cross',
-            label: {
-              backgroundColor: '#283b56'
-            }
-          }
-        },
-        dataZoom: {
-          show: true,
-          start: 0,
-          end: 100
-        },
-        xAxis: {
-          data: xAxisLabels,
-          name: '年',
-          nameTextStyle: {
-            fontSize: 8,
-            fontWeight: 'bold'
-          },
-          axisLabel: {
-            fontSize: 10,
-            fontWeight: 'bold'
-          }
-        },
-        yAxis: {
-          name: '千人',
-          nameTextStyle: {
-            fontSize: 8,
-            fontWeight: 'bold'
-          },
-          axisLabel: {
-            fontSize: 9,
-            fontWeight: 'bold',
-            formatter: function (value) {
-              return value / 1000
-            }
-          }
-        },
-        series: [
-          {
-            data: dataValues,
-            type: 'line',
-            areaStyle: {
-              color: '#0DC5C1'
-            }
-          }
-        ]
-      })
+      // option設定
+      handleEchart.options.title.text = demographic.label
+      handleEchart.options.xAxis.data = xAxisLabels
+      handleEchart.options.series[0].data = dataValues
+
+      charts = [...charts, handleEchart.init(renderAreas[index])]
     })
   })
+
+  let windowWidth = null
+  const resizeChart = trigger => {
+    charts.forEach(chart => { chart.reRender() })
+  }
+  $: { resizeChart(windowWidth) }
 </script>
 
+<!-- window幅取得用 -->
+<svelte:window bind:innerWidth={windowWidth} />
+<!-- window幅取得用 -->
 <section class="graphs">
   {#each demographics.data as demographic, index (demographic.label)}
     <div class="graphWrap" bind:this={renderAreas[index]}></div>

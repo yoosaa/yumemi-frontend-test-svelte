@@ -21,7 +21,6 @@
 
   const handleSlide = () => {
     $listHeight = visibleFlg ? 0 : 45
-
     visibleFlg = !visibleFlg
   }
 
@@ -37,6 +36,7 @@
     const value = e.target.value
     if (selecteditems.indexOf(value) === -1) selecteditems.push(value)
     else selecteditems.splice(selecteditems.indexOf(value), 1)
+
     // 念のため重複削除
     selecteditems = [...new Set(selecteditems)]
     dispatch('updateSelecteditem', { selecteditems: selecteditems})

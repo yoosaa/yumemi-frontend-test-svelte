@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + Svelte</title>
-  </head>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		%sveltekit.head%
+	</head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-785BDX52C0"></script>
   <script>
@@ -16,8 +16,7 @@
     gtag('config', 'G-785BDX52C0');
   </script>
   <!-- Google tag (gtag.js) -->
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+	<body>
+		<main style="display: contents">%sveltekit.body%</main>
+	</body>
 </html>

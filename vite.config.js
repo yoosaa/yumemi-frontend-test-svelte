@@ -1,19 +1,8 @@
-import path from 'path'
+import { sveltekit } from '@sveltejs/kit/vite'
 
-import { defineConfig } from 'vite'
-import { svelte } from '@sveltejs/vite-plugin-svelte'
+/** @type {import('vite').UserConfig} */
+const config = {
+	plugins: [sveltekit({})]
+};
 
-import sveltePreProcess from 'svelte-preprocess'
-
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [
-    svelte({
-      preprocess: sveltePreProcess({
-        scss: {
-          prependData: `@import 'src/lib/scss/_mixin.scss';`
-        }
-      })
-    })
-  ]
-})
+export default config;

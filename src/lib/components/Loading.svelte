@@ -11,8 +11,7 @@
   width: 100vw;
   height: 100vh;
   position: absolute;
-  background-color: rgba(29, 38, 48, .98);
-  opacity: .6;
+  background-color: rgba(255, 255, 255, .9);
   top: 0;
   left: 0;
   z-index: 10;
@@ -20,6 +19,7 @@
     width: 100vw;
     height: 100vh;
     display: flex;
+    opacity: .9;
     justify-content: center;
     align-items: center;
     background-color: transparent;
@@ -40,7 +40,7 @@
     &Core {
       width: 100%;
       height: 100%;
-      background-color: rgba(29, 38, 48, .98);
+      background-color: rgba(255, 255, 255, .9);
       border-radius: 50%;
     }
   }

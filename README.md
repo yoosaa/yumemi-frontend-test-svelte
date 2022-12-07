@@ -4,6 +4,6 @@
 使用するFWに、React、Vueのいずれかという指定がありますが、最近書き始めたSvelteで書いています。<br>
 
 # Use
-- Svelte (Svelte + Vite)
+- SvelteKit
 - Scss
 - [Apache ECharts](https://echarts.apache.org/en/index.html)
